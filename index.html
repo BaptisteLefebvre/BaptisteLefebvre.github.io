@@ -1,326 +1,326 @@
 <style>
-    .head {
-        background-color:#D6CFC0;
-        margin:0;
-        padding-top:30px;
-        padding-bottom: 30px;
-    }
+  .head {
+      background-color:#D6CFC0;
+      margin:0;
+      padding-top:30px;
+      padding-bottom: 30px;
+  }
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
+  body {
+      margin: 0;
+      padding: 0;
+  }
 
-    h1 {
-        color: #bbb4a7;
-        margin-left: 5%;
-        font-size: 45;
-    }
+  h1 {
+      color: #bbb4a7;
+      margin-left: 5%;
+      font-size: 45;
+  }
 
-    .h1 {
-        text-align: center;
-        background-color: white;
-        border-radius: 25px;
-        width: 30%;
-        margin-left: 33%;
-        padding: 2%;
-        color: #bbb4a7;
-        font-size: 35;
-    }
+  .h1 {
+      text-align: center;
+      background-color: white;
+      border-radius: 25px;
+      width: 30%;
+      margin-left: 33%;
+      padding: 2%;
+      color: #bbb4a7;
+      font-size: 35;
+  }
 
-    h2 {
-        text-align: center;
-        color: white;
-        font-size: 30;
-    }
-
-    .p {
-        background-color: white; 
-        border-radius: 25px;
-        width: 70%;
-        margin-left: 14%;
-        padding: 2%;
-        color: #bbb4a7;
-        font-size: 20;
-    }
-
-    .contact {
-      padding-left:5%;
-      padding-right:5%;
-    }
-
-    label {
-      font-size: 20;
-    }
-
-    input[type=text], select, textarea {
-      width: 100%; /* Full width */
-      padding: 12px; /* Some padding */ 
-      border: 1px solid #ccc; /* Gray border */
-      border-radius: 4px; /* Rounded borders */
-      box-sizing: border-box; /* Make sure that padding and width stays in place */
-      margin-top: 6px; /* Add a top margin */
-      margin-bottom: 16px; /* Bottom margin */
-      resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-    }
-
-    textarea {
-      height:23.5%;
-    }
-
-    input[type=submit] {
-      background-color: #04AA6D;
+  h2 {
+      text-align: center;
       color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-left: 45%;
-    }
+      font-size: 30;
+  }
 
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    .bouton {
-      margin-top: 4.2%;
-      background-color: #D6CFC0;
-      width: 10%;
-      padding: 10px;
-      border: solid #bbb4a7;
+  .p {
+      background-color: white; 
+      border-radius: 25px;
+      width: 70%;
+      margin-left: 14%;
+      padding: 2%;
+      color: #bbb4a7;
       font-size: 20;
-      cursor: pointer;
+  }
+
+  .contact {
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  label {
+    font-size: 20;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+  textarea {
+    height:23.5%;
+  }
+
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 45%;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .bouton {
+    margin-top: 4.2%;
+    background-color: #D6CFC0;
+    width: 10%;
+    padding: 10px;
+    border: solid #bbb4a7;
+    font-size: 20;
+    cursor: pointer;
+  }
+
+  .bouton:hover {
+    background-color: #e0d9c8;
+  }
+
+  .carousel {
+      height: 600px;
+      width: auto;
+      margin: 0;
+      display: grid;
+      grid-template-rows: 500px 100px;
+      grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+    
+    main#carousel {
+      grid-row: 1 / 2;
+      grid-column: 1 / 8;
+      width: 98vw;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      perspective: 600px;
+      --items: 5;
+      --middle: 3;
+      --position: 1;
+    }
+    
+    div.item {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      --r: calc(var(--position) - var(--offset));
+      --abs: max(calc(var(--r) * -1), var(--r));
+      transition: all 0.25s linear;
+      transform: rotateY(calc(-10deg * var(--r)))
+        translateX(calc(-300px * var(--r)));
+      z-index: calc((var(--position) - var(--abs)));
+    }
+    
+    div.item:nth-of-type(1) {
+      --offset: 1;
+      background-color: white;
+      border:solid #e0d9c8;
+    }
+    div.item:nth-of-type(2) {
+      --offset: 2;
+      background-color: white;
+        border:solid #e0d9c8;
+    }
+    div.item:nth-of-type(3) {
+      --offset: 3;
+      background-color: white;
+        border:solid #e0d9c8;
+    }
+    div.item:nth-of-type(4) {
+      --offset: 4;
+      background-color: white;
+        border:solid #e0d9c8;
+    }
+    div.item:nth-of-type(5) {
+      --offset: 5;
+      background-color: white;
+      border:solid #e0d9c8;
+    }
+    
+    input:nth-of-type(1) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    input:nth-of-type(1):checked ~ main#carousel {
+      --position: 1;
+    }
+    
+    input:nth-of-type(2) {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
+    input:nth-of-type(2):checked ~ main#carousel {
+      --position: 2;
+    }
+    
+    input:nth-of-type(3) {
+      grid-column: 4 /5;
+      grid-row: 2 / 3;
+    }
+    input:nth-of-type(3):checked ~ main#carousel {
+      --position: 3;
+    }
+    
+    input:nth-of-type(4) {
+      grid-column: 5 / 6;
+      grid-row: 2 / 3;
+    }
+    input:nth-of-type(4):checked ~ main#carousel {
+      --position: 4;
+    }
+    
+    input:nth-of-type(5) {
+      grid-column: 6 / 7;
+      grid-row: 2 / 3;
+    }
+    input:nth-of-type(5):checked ~ main#carousel {
+      --position: 5;
     }
 
-    .bouton:hover {
-      background-color: #e0d9c8;
-    }
-
-    .carousel {
-        height: 600px;
-        width: auto;
-        margin: 0;
-        display: grid;
-        grid-template-rows: 500px 100px;
-        grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
-        align-items: center;
-        justify-items: center;
-      }
-      
-      main#carousel {
-        grid-row: 1 / 2;
-        grid-column: 1 / 8;
-        width: 98vw;
-        height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        transform-style: preserve-3d;
-        perspective: 600px;
-        --items: 5;
-        --middle: 3;
-        --position: 1;
-      }
-      
-      div.item {
-        position: absolute;
-        width: 300px;
-        height: 400px;
-        --r: calc(var(--position) - var(--offset));
-        --abs: max(calc(var(--r) * -1), var(--r));
-        transition: all 0.25s linear;
-        transform: rotateY(calc(-10deg * var(--r)))
-          translateX(calc(-300px * var(--r)));
-        z-index: calc((var(--position) - var(--abs)));
-      }
-      
-      div.item:nth-of-type(1) {
-        --offset: 1;
-        background-color: white;
-        border:solid #e0d9c8;
-      }
-      div.item:nth-of-type(2) {
-        --offset: 2;
-        background-color: white;
-          border:solid #e0d9c8;
-      }
-      div.item:nth-of-type(3) {
-        --offset: 3;
-        background-color: white;
-          border:solid #e0d9c8;
-      }
-      div.item:nth-of-type(4) {
-        --offset: 4;
-        background-color: white;
-          border:solid #e0d9c8;
-      }
-      div.item:nth-of-type(5) {
-        --offset: 5;
-        background-color: white;
-        border:solid #e0d9c8;
-      }
-      
-      input:nth-of-type(1) {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-      }
-      input:nth-of-type(1):checked ~ main#carousel {
-        --position: 1;
-      }
-      
-      input:nth-of-type(2) {
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
-      }
-      input:nth-of-type(2):checked ~ main#carousel {
-        --position: 2;
-      }
-      
-      input:nth-of-type(3) {
-        grid-column: 4 /5;
-        grid-row: 2 / 3;
-      }
-      input:nth-of-type(3):checked ~ main#carousel {
-        --position: 3;
-      }
-      
-      input:nth-of-type(4) {
-        grid-column: 5 / 6;
-        grid-row: 2 / 3;
-      }
-      input:nth-of-type(4):checked ~ main#carousel {
-        --position: 4;
-      }
-      
-      input:nth-of-type(5) {
-        grid-column: 6 / 7;
-        grid-row: 2 / 3;
-      }
-      input:nth-of-type(5):checked ~ main#carousel {
-        --position: 5;
-      }
-
-      .timeL,
-      .timeL::before,
-      .timeL::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    .timeL,
+    .timeL::before,
+    .timeL::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
+background: transparent;
+border: none;
+cursor: pointer;
+outline: none;
 }
 
 .timeL {
-  background: #D6CFC0;
-  color: #fff;
-  padding-top: 1%;
+background: #D6CFC0;
+color: #fff;
+padding-top: 1%;
 }
 
 .timeL h1 {
-  margin-top:4%;
-  margin-bottom:5%;
-  color:white;
+margin-top:4%;
+margin-bottom:5%;
+color:white;
 }
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline {
-  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-  white-space: nowrap;
-  overflow-x: hidden;
+font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+white-space: nowrap;
+overflow-x: hidden;
 }
 
 .timeline ol {
-  font-size: 0;
-  width: 100vw;
-  padding: 250px 0;
-  transition: all 1s;
+font-size: 0;
+width: 100vw;
+padding: 250px 0;
+transition: all 1s;
 }
 
 .timeline ol li {
-  position: relative;
-  display: inline-block;
-  list-style-type: none;
-  width: 160px;
-  height: 3px;
-  background: #fff;
+position: relative;
+display: inline-block;
+list-style-type: none;
+width: 160px;
+height: 3px;
+background: #fff;
 }
 
 .timeline ol li:last-child {
-  width: 280px;
+width: 280px;
 }
 
 .timeline ol li:not(:first-child) {
-  margin-left: 14px;
+margin-left: 14px;
 }
 
 .timeline ol li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: #F45B69;
+content: '';
+position: absolute;
+top: 50%;
+left: calc(100% + 1px);
+bottom: 0;
+width: 12px;
+height: 12px;
+transform: translateY(-50%);
+border-radius: 50%;
+background: #F45B69;
 }
 
 .timeline ol li div {
-  position: absolute;
-  left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
-  font-size: 1rem;
-  white-space: normal;
-  color: black;
-  background: white;
+position: absolute;
+left: calc(100% + 7px);
+width: 280px;
+padding: 15px;
+font-size: 1rem;
+white-space: normal;
+color: black;
+background: white;
 }
 
 .timeline ol li div::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
+content: '';
+position: absolute;
+top: 100%;
+left: 0;
+width: 0;
+height: 0;
+border-style: solid;
 }
 
 .timeline ol li:nth-child(odd) div {
-  top: -16px;
-  transform: translateY(-100%);
+top: -16px;
+transform: translateY(-100%);
 }
 
 .timeline ol li:nth-child(odd) div::before {
-  top: 100%;
-  border-width: 8px 8px 0 0;
-  border-color: white transparent transparent transparent;
+top: 100%;
+border-width: 8px 8px 0 0;
+border-color: white transparent transparent transparent;
 }
 
 .timeline ol li:nth-child(even) div {
-  top: calc(100% + 16px);
+top: calc(100% + 16px);
 }
 
 .timeline ol li:nth-child(even) div::before {
-  top: -8px;
-  border-width: 8px 0 0 8px;
-  border-color: transparent transparent transparent white;
+top: -8px;
+border-width: 8px 0 0 8px;
+border-color: transparent transparent transparent white;
 }
 
 .timeline time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+display: block;
+font-size: 1.2rem;
+font-weight: bold;
+margin-bottom: 8px;
 }
 
 
@@ -328,451 +328,467 @@ button {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline .arrows {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
 }
 
 .timeline .arrows .arrow__prev {
-  margin-right: 20px;
+margin-right: 20px;
 }
 
 .timeline .disabled {
-  opacity: .5;
+opacity: .5;
 }
 
 .timeline .arrows img {
-  width: 45px;
-  height: 45px;
+width: 45px;
+height: 45px;
 }
 
 
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (max-width: 599px) {
-  .timeline ol,
-  .timeline ol li {
-    width: auto; 
-  }
-  
-  .timeline ol {
-    padding: 0;
-    transform: none !important;
-  }
-  
-  .timeline ol li {
-    display: block;
-    height: auto;
-    background: transparent;
-  }
-  
-  .timeline ol li:first-child {
-    margin-top: 25px;
-  }
-  
-  .timeline ol li:not(:first-child) {
-    margin-left: auto;
-  }
-  
-  .timeline ol li div {
-    width: 94%;
-    height: auto !important;
-    margin: 0 auto 25px;
-  }
-  
-  .timeline ol li div {
-    position: static;
-  }
-  
-  .timeline ol li:nth-child(odd) div {
-    transform: none;
-  }
-  
-  .timeline ol li:nth-child(odd) div::before,
-  .timeline ol li:nth-child(even) div::before {
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border: none;
-    border-left: 1px solid white;
-    height: 25px;
-  }
-  
-  .timeline ol li:last-child,
-  .timeline ol li:nth-last-child(2) div::before,
-  .timeline ol li:not(:last-child)::after,
-  .timeline .arrows {
-    display: none;
-  }
+.timeline ol,
+.timeline ol li {
+  width: auto; 
+}
+
+.timeline ol {
+  padding: 0;
+  transform: none !important;
+}
+
+.timeline ol li {
+  display: block;
+  height: auto;
+  background: transparent;
+}
+
+.timeline ol li:first-child {
+  margin-top: 25px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: auto;
+}
+
+.timeline ol li div {
+  width: 94%;
+  height: auto !important;
+  margin: 0 auto 25px;
+}
+
+.timeline ol li div {
+  position: static;
+}
+
+.timeline ol li:nth-child(odd) div {
+  transform: none;
+}
+
+.timeline ol li:nth-child(odd) div::before,
+.timeline ol li:nth-child(even) div::before {
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: none;
+  border-left: 1px solid white;
+  height: 25px;
+}
+
+.timeline ol li:last-child,
+.timeline ol li:nth-last-child(2) div::before,
+.timeline ol li:not(:last-child)::after,
+.timeline .arrows {
+  display: none;
+}
 }
 
 .fn {
-  position: absolute;
-  left:10%;
-  top:105%;
-  height:auto;
-  width: 80%;
-  border:solid 5px #D6CFC0 ;
-  border-radius: 10px;
-  background-color: #fff;
-  visibility: hidden;
-  z-index: 2;
-  text-align: center;
-  padding:20px;
+position: absolute;
+left:10%;
+top:105%;
+height:auto;
+width: 80%;
+border:solid 5px #D6CFC0 ;
+border-radius: 10px;
+background-color: #fff;
+visibility: hidden;
+z-index: 2;
+text-align: center;
+padding:20px;
 }
 
 .fn h1 {
-  margin:0;
+margin:0;
 }
 
 .fn button {
-  font-size: 20;
-  padding:5px 10px;
+font-size: 20;
+padding:5px 10px;
 }
 
 .fn p {
-  text-align: justify;
+text-align: justify;
 }
 
 .rotateimg180 {
-  -webkit-transform:rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  transform: rotate(270deg);
+-webkit-transform:rotate(270deg);
+-moz-transform: rotate(270deg);
+-ms-transform: rotate(270deg);
+-o-transform: rotate(270deg);
+transform: rotate(270deg);
 }
 
 </style>
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Baptiste Lefebvre</title>
-        <link rel="stylesheet">
-    </head>
-    <body>
-        <div class="head">
-          <img src="./IMG_8764-2.jpg" width="21%" style="border-radius:300px; margin-left:39.5%">
-            <h1 class="h1">Baptiste LEFEBVRE</h1>
-            <h2>Apprenti Développeur WEB</h2>
-            <div class="p">
-                <p>Je m'appelle Baptiste Lefebvre, je suis en Bachelor DIGITAL dans l'école EFFICOM.</p>
-                <p>Je suis Normand mais je suis venu dans le Nord pour mes études. Je suis passionné par l'informatique , les jeux-vidéos, les séries / films et le sport. </p>
-            </div>
-        </div>
-        <h1> Mes projets </h1>
-        <div class="carousel">
-        <input type="radio" name="position" checked />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <input type="radio" name="position" />
-        <div class="fn" id="1">
-          <h1>Création d'un site web pour l'IUT de Lens</h1>
-          <p>
-            Ce premier projet tutoré a pour but de nous apprendre à
+  <head>
+      <meta charset="utf-8">
+      <title>Baptiste Lefebvre</title>
+      <link rel="stylesheet">
+  </head>
+  <body>
+      <div class="head">
+        <img src="./IMG_8764-2.jpg" width="21%" style="border-radius:300px; margin-left:39.5%">
+          <h1 class="h1">Baptiste LEFEBVRE</h1>
+          <h2>Apprenti Développeur WEB</h2>
+          <div class="p">
+              <p>Je m'appelle Baptiste Lefebvre, je suis en Bachelor DIGITAL dans l'école EFFICOM.</p>
+              <p>Je suis Normand mais je suis venu dans le Nord pour mes études. Je suis passionné par l'informatique , les jeux-vidéos, les séries / films et le sport. </p>
+          </div>
+      </div>
+      <h1> Mes projets </h1>
+      <div class="carousel">
+      <input type="radio" name="position" checked />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <div class="fn" id="1">
+        <h1>Création d'un site web pour l'IUT de Lens</h1>
+        <p>
+          Ce premier projet tutoré a pour but de nous apprendre à
 travailler en équipe et à améliorer nos compétences en webdesign et
 développement front-end.
+        </p>
+        <p>
+          Ce projet a été réalisé en équipe de 3 personnes. L’objectif de ce projet est de faire un relooking du portail des IUT
+          Informatique. Le portail des IUT Informatique est un site qui permet aux lycéens,
+          étudiants, parents et professeurs de se renseigner sur la formation que
+          propose le DUT informatique. Notre travail a donc été de créer une nouvelle charte graphique et
+          éditoriale pour améliorer le design, de trouver de nouvelles images et de
+          nouveaux logos et également de faire une version responsive.
+        </p>
+        <div style="width:100%; height:300px; margin:0; padding:0;">
+          <div style="width:49%; float:left;"> 
+            Avant :
+            <br>
+            <img src="projtut1-1.png" style="height:100%; ">
+          </div>
+          <div style="width:49%; float:right;">
+            Après :
+            <br>
+            <img src="projtut1-2.png" style="height:90%;">
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button onclick="fermer('1')" style="background-color:crimson; float:bottom;">Fermer</button>
+      </div>
+      <div class="fn" id="2">
+        <h1>Jeu "Labyrinthe"</h1>
+        <p>Pour commencer, le but de ce projet a été de réaliser le jeu de plateau labyrinthe.
+          Ce jeu est réalisé par l'édition Ravensburger, notre objectif : le réaliser sous forme numérique.
           </p>
           <p>
-            Ce projet a été réalisé en équipe de 3 personnes. L’objectif de ce projet est de faire un relooking du portail des IUT
-            Informatique. Le portail des IUT Informatique est un site qui permet aux lycéens,
-            étudiants, parents et professeurs de se renseigner sur la formation que
-            propose le DUT informatique. Notre travail a donc été de créer une nouvelle charte graphique et
-            éditoriale pour améliorer le design, de trouver de nouvelles images et de
-            nouveaux logos et également de faire une version responsive.
-          </p>
-          <div style="width:100%; height:300px; margin:0; padding:0;">
-            <div style="width:49%; float:left;"> 
-              Avant :
-              <br>
-              <img src="projtut1-1.png" style="height:100%; ">
-            </div>
-            <div style="width:49%; float:right;">
-              Après :
-              <br>
-              <img src="projtut1-2.png" style="height:90%;">
-            </div>
-          </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <button onclick="fermer('1')" style="background-color:crimson; float:bottom;">Fermer</button>
-        </div>
-        <div class="fn" id="2">
-          <h1>Jeu "Labyrinthe"</h1>
-          <p>Pour commencer, le but de ce projet a été de réaliser le jeu de plateau labyrinthe.
-            Ce jeu est réalisé par l'édition Ravensburger, notre objectif : le réaliser sous forme numérique.
-            </p>
-            <p>
-              Ce projet a été réalisé en équipe de 4 personnes.
-              Afin de réaliser ce projet nous disposions de certaines consignes afin de le réaliser dans de bonnes conditions.
+            Ce projet a été réalisé en équipe de 4 personnes.
+            Afin de réaliser ce projet nous disposions de certaines consignes afin de le réaliser dans de bonnes conditions.
 Tout d'abord nous devions utiliser le langage JAVA pour coder ce jeu, plus précisément la librairie graphique SWING pour l'interface graphique.
 
-            </p>
-            <img src="Projtut2.png" style="width:50%;">
-            <br>
-            <br>
-          <br>
-          <br>
-          <button onclick="fermer('2')" style="background-color:crimson;">Fermer</button>
-        </div>
-        <div class="fn" id="3">
-          <h1>Marathon du WEB</h1>
-          <p>Le but de ce projet a été de réaliser un site WEB type allociné en seulement 48h.</p>
-          <p>Ce projet a été réalisé en équipe de 7 personnes composée de 3 développeurs Back, 2 développeurs front, un graphiste et une rédactrice / responsable audiovisuel. Pour ma part, je faisais partie de l'équipe de développeurs back.
           </p>
-          <p>
-            Voici différentes pages que nous avons réalisé :
-          </p>
-            <img src="page1.png" style="width:35%">
-            <img src="page2.png" style="width:35%">
-            <img src="page3.png" style="width:35%">
-            <img src="page4.png" style="width:35%">
+          <img src="Projtut2.png" style="width:50%;">
           <br>
           <br>
+        <br>
+        <br>
+        <button onclick="fermer('2')" style="background-color:crimson;">Fermer</button>
+      </div>
+      <div class="fn" id="3">
+        <h1>Marathon du WEB</h1>
+        <p>Le but de ce projet a été de réaliser un site WEB type allociné en seulement 48h.</p>
+        <p>Ce projet a été réalisé en équipe de 7 personnes composée de 3 développeurs Back, 2 développeurs front, un graphiste et une rédactrice / responsable audiovisuel. Pour ma part, je faisais partie de l'équipe de développeurs back.
+        </p>
+        <p>
+          Voici différentes pages que nous avons réalisé :
+        </p>
+          <img src="page1.png" style="width:35%">
+          <img src="page2.png" style="width:35%">
+          <img src="page3.png" style="width:35%">
+          <img src="page4.png" style="width:35%">
+        <br>
+        <br>
+        <br>
+        <button onclick="fermer('3')" style="background-color:crimson;">Fermer</button>
+      </div>
+      <div class="fn" id="4">
+        <h1>Agil'IT</h1>
+        <p>Le but de ce projet a été de réaliser un site WEB de type QUIZ avec comme thème Burger QUIZ en utilisant la méthode de travail Agile.</p>
+        <p>Ce projet a été réalisé en équipe de 6 personnes avec des développeurs front et back. Pour ma part, j'ai fait parti de l'équipe de développeurs back.</p>
+        <p>Voici différentes pages que nous avons réalisé :</p>
+        <img src="capt1.png" style="width:35%">
+        <img src="capt2.png" style="width:35%">
+        <img src="capt3.png" style="width:35%">
+        <img src="capt4.png" style="width:35%">
+        <br>
+        <br>
+        <br>
+        <button onclick="fermer('4')" style="background-color:crimson;">Fermer</button>
+      </div>
+      <div class="fn" id="5">
+        <h1>Guess the LoL</h1>
+        <p>
+          Ce projet personnel est un site web réalisé en HTML , SCSS , JS et VueJS. Ce site rassemble différents quiz
+        </p>
+        <p>
+          Ce site rassemble 4 quiz sur le jeu League of Legend : Guess the abilitie , Guess the champion , Guess the player et Guess the skin.
+          Vous pouvez aller voir le site en cliquant sur le lien si dessous :
+        </p>
+        <a href="https://baptistelefebvre.github.io/Guess-the-LoL.github.io/">Guess the LoL</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button onclick="fermer('5')" style="background-color:crimson; float:bottom;">Fermer</button>
+      </div>
+      <main id="carousel">
+        <div class="item" style=" text-align:center; padding:10px;">
+          <h2 style="color:black" >Création d’un site web pour l’IUT de Lens</h2>
           <br>
-          <button onclick="fermer('3')" style="background-color:crimson;">Fermer</button>
+          <img src="IUT.png" style="width:50%">
+          <br>
+          <p>HTML - CSS - Bootstrap</p>
+          <br>
+          <a class="bouton" onclick="ouvrir('1')">Voir plus</a>
         </div>
-        <div class="fn" id="4">
-          <h1>Agil'IT</h1>
-          <p>Le but de ce projet a été de réaliser un site WEB de type QUIZ avec comme thème Burger QUIZ en utilisant la méthode de travail Agile.</p>
-          <p>Ce projet a été réalisé en équipe de 6 personnes avec des développeurs front et back. Pour ma part, j'ai fait parti de l'équipe de développeurs back.</p>
-          <p>Voici différentes pages que nous avons réalisé :</p>
-          <img src="capt1.png" style="width:35%">
-          <img src="capt2.png" style="width:35%">
-          <img src="capt3.png" style="width:35%">
-          <img src="capt4.png" style="width:35%">
+        <div class="item" style="text-align:center; padding:10px;">
+          <h2 style="color:black">Jeu "Labyrinthe"</h2>
           <br>
+          <img src="labyrinthe.jpg" style="width:100%">
           <br>
-          <br>
-          <button onclick="fermer('4')" style="background-color:crimson;">Fermer</button>
+          <p>Java</p>
+          <a class="bouton" onclick="ouvrir('2')">Voir plus</a>
         </div>
-        <main id="carousel">
+        <div class="item" style="text-align:center; padding:10px;">
+          <h2 style="color:black">Marathon du WEB</h2>
+          <br>
+          <br>
+          <img src="Projtut3.png" style="width:100%">
+          <br>
+          <br>
+          <p>HTML - CSS - PHP - JS</p>
+          <br>
+          <a class="bouton" onclick="ouvrir('3')">Voir plus</a>
+        </div>
+        <div class="item" style=" text-align:center; padding:10px;">
+          <h2 style="color:black">Agil'IT</h2>
+          <br>
+          <img src="bq.png" style="height:20%">
+          <br>
+          <img src="agiliut.png" style="height:33%;" class="rotateimg180">
+          <p>HTML - CSS - PHP - JS</p>
+          <a class="bouton" onclick="ouvrir('4')">Voir plus</a>
+        </div>
           <div class="item" style=" text-align:center; padding:10px;">
-            <h2 style="color:black" >Création d’un site web pour l’IUT de Lens</h2>
-            <br>
-            <img src="IUT.png" style="width:50%">
-            <br>
-            <p>HTML - CSS - Bootstrap</p>
-            <br>
-            <a class="bouton" onclick="ouvrir('1')">Voir plus</a>
-          </div>
-          <div class="item" style="text-align:center; padding:10px;">
-            <h2 style="color:black">Jeu "Labyrinthe"</h2>
-            <br>
-            <img src="labyrinthe.jpg" style="width:100%">
-            <br>
-            <p>Java</p>
-            <a class="bouton" onclick="ouvrir('2')">Voir plus</a>
-          </div>
-          <div class="item" style="text-align:center; padding:10px;">
-            <h2 style="color:black">Marathon du WEB</h2>
-            <br>
-            <br>
-            <img src="Projtut3.png" style="width:100%">
-            <br>
-            <br>
-            <p>HTML - CSS - PHP - JS</p>
-            <br>
-            <a class="bouton" onclick="ouvrir('3')">Voir plus</a>
-          </div>
-          <div class="item" style=" text-align:center; padding:10px;">
-            <h2 style="color:black">Agil'IT</h2>
-            <br>
-            <img src="bq.png" style="height:20%">
-            <br>
-            <img src="agiliut.png" style="height:33%;" class="rotateimg180">
-            <p>HTML - CSS - PHP - JS</p>
-            <a class="bouton" onclick="ouvrir('4')">Voir plus</a>
-          </div>
-            <div class="item" style=" text-align:center; padding:10px;">
-            <h2 style="color:black">Guess the LoL</h2>
-            <br>
-            <img src="lol.png" style="height:50%">
-            <br>
-            <p>HTML - SCSS - JS - VueJS</p>
-            <a class="bouton" onclick="ouvrir('5')">Voir plus</a>
-          </div>
-          <main>
+          <h2 style="color:black">Guess the LoL</h2>
+          <br>
+          <img src="lol.png" style="height:50%">
+          <br>
+          <p>HTML - SCSS - JS - VueJS</p>
+          <a class="bouton" onclick="ouvrir('5')">Voir plus</a>
         </div>
-        <div class="timeL">
-          <h1>Mes expériences</h1>
-              <section class="timeline">
-                <ol>
-                  <li>
-                    <div style="padding-bottom:0;">
-                      <time>2017 - 2020 | Lycée </time> 
-                      <p>Filière Scientifique avec option mathématiques</p>
-                      <p>Obtention du Baccalauréat Scientifique mention assez bien</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div style="padding-bottom:0;">
-                      <time> 2020 - 2022 | IUT de Lens</time> 
-                      <p>Durant ces 2 années j'ai appris la programmation Web (Python - HTML - CSS - JS - PHP) et machine (Java)</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div style="padding-bottom:0;">
-                      <time>Avril - Juin 2022 | Stage</time> 
-                      <p> Ma mission durant ce stage était d'améliorer le site de gestion d'inventaire de la commune de Petit-Caux.</p>
-                      <p>HTML - CSS - JS - PHP - SQL</p>
-                    </div>
-                  </li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ol>
-                
-                <div class="arrows">
-                  <button class="arrow arrow__prev disabled" disabled>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
-                  </button>
-                  <button class="arrow arrow__next">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
-                  </button>
-                </div>
-              </section>
-        </div>
-        <a href="CV.pdf"><button class="bouton" style="margin-left:30%;">Mon CV</button></a>
-        
-        <a href="mailto:baptiste.lefebvre2002@gmail.com"><button class="bouton" style="margin-left:20%; margin-bottom: 4%;">Me contacter</button></a>
-    </body>
+        <main>
+      </div>
+      <div class="timeL">
+        <h1>Mes expériences</h1>
+            <section class="timeline">
+              <ol>
+                <li>
+                  <div style="padding-bottom:0;">
+                    <time>2017 - 2020 | Lycée </time> 
+                    <p>Filière Scientifique avec option mathématiques</p>
+                    <p>Obtention du Baccalauréat Scientifique mention assez bien</p>
+                  </div>
+                </li>
+                <li>
+                  <div style="padding-bottom:0;">
+                    <time> 2020 - 2022 | IUT de Lens</time> 
+                    <p>Durant ces 2 années j'ai appris la programmation Web (Python - HTML - CSS - JS - PHP) et machine (Java)</p>
+                  </div>
+                </li>
+                <li>
+                  <div style="padding-bottom:0;">
+                    <time>Avril - Juin 2022 | Stage</time> 
+                    <p> Ma mission durant ce stage était d'améliorer le site de gestion d'inventaire de la commune de Petit-Caux.</p>
+                    <p>HTML - CSS - JS - PHP - SQL</p>
+                  </div>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+              
+              <div class="arrows">
+                <button class="arrow arrow__prev disabled" disabled>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
+                </button>
+                <button class="arrow arrow__next">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
+                </button>
+              </div>
+            </section>
+      </div>
+      <a href="CV.pdf"><button class="bouton" style="margin-left:30%;">Mon CV</button></a>
+      
+      <a href="mailto:baptiste.lefebvre2002@gmail.com"><button class="bouton" style="margin-left:20%; margin-bottom: 4%;">Me contacter</button></a>
+  </body>
 </html>
 <script>
 
-  function ouvrir(id){
-    document.getElementById(id).style.visibility = "visible";
-  }
+function ouvrir(id){
+  document.getElementById(id).style.visibility = "visible";
+}
 
-  function fermer(id){
-    document.getElementById(id).style.visibility = "hidden";
-  }
+function fermer(id){
+  document.getElementById(id).style.visibility = "hidden";
+}
 
-    (function() {
+  (function() {
 
-        // VARIABLES
-        const timeline = document.querySelector(".timeline ol"),
-          elH = document.querySelectorAll(".timeline li > div"),
-          arrows = document.querySelectorAll(".timeline .arrows .arrow"),
-          arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
-          arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
-          firstItem = document.querySelector(".timeline li:first-child"),
-          lastItem = document.querySelector(".timeline li:last-child"),
-          xScrolling = 280,
-          disabledClass = "disabled";
-      
-        // START
-        window.addEventListener("load", init);
-      
-        function init() {
-          setEqualHeights(elH);
-          animateTl(xScrolling, arrows, timeline);
-          setSwipeFn(timeline, arrowPrev, arrowNext);
-          setKeyboardFn(arrowPrev, arrowNext);
+      // VARIABLES
+      const timeline = document.querySelector(".timeline ol"),
+        elH = document.querySelectorAll(".timeline li > div"),
+        arrows = document.querySelectorAll(".timeline .arrows .arrow"),
+        arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
+        arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
+        firstItem = document.querySelector(".timeline li:first-child"),
+        lastItem = document.querySelector(".timeline li:last-child"),
+        xScrolling = 280,
+        disabledClass = "disabled";
+    
+      // START
+      window.addEventListener("load", init);
+    
+      function init() {
+        setEqualHeights(elH);
+        animateTl(xScrolling, arrows, timeline);
+        setSwipeFn(timeline, arrowPrev, arrowNext);
+        setKeyboardFn(arrowPrev, arrowNext);
+      }
+    
+      // SET EQUAL HEIGHTS
+      function setEqualHeights(el) {
+        let counter = 0;
+        for (let i = 0; i < el.length; i++) {
+          const singleHeight = el[i].offsetHeight;
+    
+          if (counter < singleHeight) {
+            counter = singleHeight;
+          }
         }
-      
-        // SET EQUAL HEIGHTS
-        function setEqualHeights(el) {
-          let counter = 0;
-          for (let i = 0; i < el.length; i++) {
-            const singleHeight = el[i].offsetHeight;
-      
-            if (counter < singleHeight) {
-              counter = singleHeight;
+    
+        for (let i = 0; i < el.length; i++) {
+          el[i].style.height = `${counter}px`;
+        }
+      }
+    
+      // CHECK IF AN ELEMENT IS IN VIEWPORT
+      // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+    
+      // SET STATE OF PREV/NEXT ARROWS
+      function setBtnState(el, flag = true) {
+        if (flag) {
+          el.classList.add(disabledClass);
+        } else {
+          if (el.classList.contains(disabledClass)) {
+            el.classList.remove(disabledClass);
+          }
+          el.disabled = false;
+        }
+      }
+    
+      // ANIMATE TIMELINE
+      function animateTl(scrolling, el, tl) {
+        let counter = 0;
+        for (let i = 0; i < el.length; i++) {
+          el[i].addEventListener("click", function() {
+            if (!arrowPrev.disabled) {
+              arrowPrev.disabled = true;
             }
-          }
-      
-          for (let i = 0; i < el.length; i++) {
-            el[i].style.height = `${counter}px`;
-          }
-        }
-      
-        // CHECK IF AN ELEMENT IS IN VIEWPORT
-        // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-        function isElementInViewport(el) {
-          const rect = el.getBoundingClientRect();
-          return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-          );
-        }
-      
-        // SET STATE OF PREV/NEXT ARROWS
-        function setBtnState(el, flag = true) {
-          if (flag) {
-            el.classList.add(disabledClass);
-          } else {
-            if (el.classList.contains(disabledClass)) {
-              el.classList.remove(disabledClass);
+            if (!arrowNext.disabled) {
+              arrowNext.disabled = true;
             }
-            el.disabled = false;
-          }
-        }
-      
-        // ANIMATE TIMELINE
-        function animateTl(scrolling, el, tl) {
-          let counter = 0;
-          for (let i = 0; i < el.length; i++) {
-            el[i].addEventListener("click", function() {
-              if (!arrowPrev.disabled) {
-                arrowPrev.disabled = true;
-              }
-              if (!arrowNext.disabled) {
-                arrowNext.disabled = true;
-              }
-              const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
-              if (counter === 0) {
-                tl.style.transform = `translateX(-${scrolling}px)`;
-              } else {
-                const tlStyle = getComputedStyle(tl);
-                // add more browser prefixes if needed here
-                const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
-                const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
-                tl.style.transform = `translateX(${values}px)`;
-              }
-      
-              setTimeout(() => {
-                isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
-                isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
-              }, 1100);
-      
-              counter++;
-            });
-          }
-        }
-      
-        // ADD SWIPE SUPPORT FOR TOUCH DEVICES
-        function setSwipeFn(tl, prev, next) {
-          const hammer = new Hammer(tl);
-          hammer.on("swipeleft", () => next.click());
-          hammer.on("swiperight", () => prev.click());
-        }
-      
-        // ADD BASIC KEYBOARD FUNCTIONALITY
-        function setKeyboardFn(prev, next) {
-          document.addEventListener("keydown", (e) => {
-            if ((e.which === 37) || (e.which === 39)) {
-              const timelineOfTop = timeline.offsetTop;
-              const y = window.pageYOffset;
-              if (timelineOfTop !== y) {
-                window.scrollTo(0, timelineOfTop);
-              }
-              if (e.which === 37) {
-                prev.click();
-              } else if (e.which === 39) {
-                next.click();
-              }
+            const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
+            if (counter === 0) {
+              tl.style.transform = `translateX(-${scrolling}px)`;
+            } else {
+              const tlStyle = getComputedStyle(tl);
+              // add more browser prefixes if needed here
+              const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
+              const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
+              tl.style.transform = `translateX(${values}px)`;
             }
+    
+            setTimeout(() => {
+              isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
+              isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
+            }, 1100);
+    
+            counter++;
           });
         }
-      
-      })();
+      }
+    
+      // ADD SWIPE SUPPORT FOR TOUCH DEVICES
+      function setSwipeFn(tl, prev, next) {
+        const hammer = new Hammer(tl);
+        hammer.on("swipeleft", () => next.click());
+        hammer.on("swiperight", () => prev.click());
+      }
+    
+      // ADD BASIC KEYBOARD FUNCTIONALITY
+      function setKeyboardFn(prev, next) {
+        document.addEventListener("keydown", (e) => {
+          if ((e.which === 37) || (e.which === 39)) {
+            const timelineOfTop = timeline.offsetTop;
+            const y = window.pageYOffset;
+            if (timelineOfTop !== y) {
+              window.scrollTo(0, timelineOfTop);
+            }
+            if (e.which === 37) {
+              prev.click();
+            } else if (e.which === 39) {
+              next.click();
+            }
+          }
+        });
+      }
+    
+    })();
 </script>
